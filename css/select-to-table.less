@@ -1,0 +1,74 @@
+.new-select {
+	width: 350px;
+	max-width: 100%;
+	position: relative;
+	z-index: 1;
+	.new-selectbox {
+		line-height: 38px;
+		border: solid 1px grey;
+		border-radius: 4px;
+		font-size: 14px;
+		cursor: pointer;
+		z-index: 1;
+		background: #fff;
+		span {
+			position: relative;
+			display: block;
+			margin-left: .5rem;
+			z-index: 2;
+		}
+		.fa {
+			line-height: 38px;
+			position: absolute;
+			right: .5rem;
+			top: 0;
+			z-index: 1;
+		}
+	}
+	.new-options-bg.active {
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: fixed;
+		content: "";
+		background: transparent;
+		z-index: -1;
+	}
+	.new-options {
+		width: calc(100% - 1rem);
+		margin: 0 .5rem;
+		font-size: 14px;
+		position: absolute;
+		background: #fff;
+		z-index: -1;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+		display: none;
+		tr {
+			td {
+				padding: 0 4px;
+				line-height: 180%;
+				text-align: left;
+				transition: 0.3s all;
+				cursor: pointer;
+				border-bottom: solid 1px lightgrey;
+				&:first-child {
+					border-left: solid 1px lightgrey;
+				}
+				&:last-child {
+					border-right: solid 1px lightgrey;
+				}
+			}
+			&.selected {
+				td {
+					background: lightgrey;
+				}
+			}
+			&:hover {
+				td {
+					background: lighten(lightgrey,10%);
+				}
+			}
+		}
+	}
+}
